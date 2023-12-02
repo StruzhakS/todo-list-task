@@ -71,11 +71,12 @@ const ReactPaginate = ({ items }) => {
         <p>Показати </p>
         <Select
           options={optionOfCompletedTodo}
-          className="basic-single"
+          //   className="basic-single"
           classNamePrefix="select"
           onChange={e => setFilter(e.value)}
           defaultValue={optionOfCompletedTodo[0]}
           styles={customStyles}
+          className={s.showStyles}
         />
       </div>
 

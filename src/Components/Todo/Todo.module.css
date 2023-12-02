@@ -110,11 +110,11 @@ input[type='checkbox']:checked + label:before {
 }
 
 .highload1 + .lb1 {
-  background-color: #ccc;
+  background-color: #dedede;
 }
 
 .highload1:checked + .lb1 {
-  background-color: #ccc;
+  background-color: #dedede;
 }
 
 .highload1:checked + .lb1::before {
