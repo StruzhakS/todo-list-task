@@ -87,7 +87,7 @@ const ReactPaginate = ({ items }) => {
       <Pagination
         activePage={activePage}
         itemsCountPerPage={+itemsCountPerPage}
-        totalItemsCount={items.length}
+        totalItemsCount={filteredTodo.length}
         onChange={handlePageChange}
         innerClass="pagination-list"
         firstPageText={<GrChapterPrevious size={12} color="black" />}
