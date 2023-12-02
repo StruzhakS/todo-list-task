@@ -26,9 +26,13 @@ dd {
   margin: 0;
 }
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul,
-ol {
+ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
 }
 /* Set core root defaults */
 html:focus-within {
@@ -70,4 +74,23 @@ select {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* style of pagination */
+.pagination-list {
+  display: flex;
+  gap: 15px;
+}
+/* style of select */
+
+.activePaginateLink {
+  color: rgb(180, 114, 16);
+  font-weight: bold;
+}
+
+.basic-single {
+  width: 100px;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

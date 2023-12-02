@@ -16,11 +16,11 @@ export const todosSlice = createSlice({
     //   filter: action.payload,
     // }),
 
-    addNewTodo: (state, action) => ({ ...state, todos: [...state.todos, action.payload] }),
+    addNewTodo: (state, action) => ({ ...state, todos: [action.payload, ...state.todos] }),
 
     updateTodoById: (state, action) => {
-      const findUpdatIndex = state.todos.findIndex(el => el.id === action.payload.id);
-      state.items[findUpdatIndex] = action.payload;
+      const findUpdateTodoIndex = state.todos.findIndex(el => el.id === action.payload.id);
+      state.todos[findUpdateTodoIndex] = action.payload;
     },
 
     deleteTodoById: (state, action) => ({
@@ -29,7 +29,7 @@ export const todosSlice = createSlice({
     }),
   },
   extraReducers: builder => {
-    if (JSON.parse(localStorage.getItem('persist:root'))?.todos?.length < 2) {
+    if (JSON.parse(localStorage.getItem('persist:root'))?.todos?.length <= 2) {
       return builder
         .addCase(getAllTodosOperation.pending, state => {
           state.isLoading = true;

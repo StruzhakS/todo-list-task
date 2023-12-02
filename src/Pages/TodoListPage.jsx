@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchAllTodos } from '../Services/TodoApi';
-import Todo from '../Components/Todo/Todo';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllTodosOperation } from '../Redux/Operations';
-import { addNewTodo } from '../Redux/TodosSlice';
+import Modal from '../Components/Modal/AddTodoModal';
+import ReactPaginate from '../Components/Paginate/ReactPaginate';
+import s from './TodoListPage.module.css';
 
 const TodoListPage = () => {
   const todos = useSelector(state => state.todo.todos);
   const dispatch = useDispatch();
-  const todo = {
-    completed: false,
-    id: 1123,
-    title: 'Struzhak is Molodex',
-    userId: 4,
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   useEffect(() => {
@@ -24,17 +27,16 @@ const TodoListPage = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={s.container}>
       <p>Всього задач: {todos?.length || 0}</p>
-      <ul>
-        {todos?.map(el => (
-          <Todo key={el.title} todo={el} />
-        ))}
-      </ul>
-      <button type="button" onClick={() => dispatch(addNewTodo(todo))}>
+
+      <button type="button" onClick={() => openModal()}>
         Add todo
       </button>
-    </>
+
+      <ReactPaginate items={todos} />
+      <Modal showModal={showModal} closeModal={closeModal} />
+    </div>
   );
 };
 
