@@ -19,7 +19,7 @@ const TodoListPage = () => {
   };
 
   const completedTodo = todos?.filter(el => el.completed === true);
-  console.log(completedTodo);
+
   useEffect(() => {
     const getAllTodos = async () => {
       const allTodos = await fetchAllTodos();

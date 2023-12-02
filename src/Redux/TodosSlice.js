@@ -11,11 +11,6 @@ export const todosSlice = createSlice({
     error: '',
   },
   reducers: {
-    // filterTodos: (state, action) => ({
-    //   ...state,
-    //   filter: action.payload,
-    // }),
-
     addNewTodo: (state, action) => ({ ...state, todos: [action.payload, ...state.todos] }),
 
     updateTodoById: (state, action) => {
