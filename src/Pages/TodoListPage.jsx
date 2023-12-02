@@ -32,7 +32,7 @@ const TodoListPage = () => {
     <div className={s.container}>
       <p>Всього виконаних задач: {`${completedTodo.length} / ${todos?.length}` || 0}</p>
 
-      <button type="button" onClick={() => openModal()}>
+      <button type="button" onClick={() => openModal()} className="custom-btn btn-9">
         Add todo
       </button>
 
