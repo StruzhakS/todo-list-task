@@ -114,7 +114,6 @@ code {
   color: #000000;
   border: 1px solid #4b4b47;
   box-shadow: 0 0 5px #4b4b47, 0 0 5px #4b4b47 inset;
-  z-index: 2;
   transition: all 0.3s ease;
   overflow: hidden;
 }
