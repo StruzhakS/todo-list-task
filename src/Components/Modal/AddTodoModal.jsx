@@ -6,6 +6,7 @@ import { addNewTodo } from '../../Redux/TodosSlice';
 import { modalStyles } from '../../Constans/modalStyle';
 
 ReactModal.setAppElement('#main');
+// Модальне вікно для додавання Todo
 
 const Modal = ({ showModal, closeModal }) => {
   const [todoTitle, setTodoTitle] = useState('');

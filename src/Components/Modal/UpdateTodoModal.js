@@ -6,6 +6,8 @@ import { modalStyles } from '../../Constans/modalStyle';
 
 ReactModal.setAppElement('#main');
 
+// Модальне вікно для редагування Todo
+
 const UpdateTodoModal = ({ show, close, todo }) => {
   const [updatedTodoTitle, setUpdatedTodoTitle] = useState(todo.title);
   const dispatch = useDispatch();
@@ -26,8 +28,6 @@ const UpdateTodoModal = ({ show, close, todo }) => {
     }
     window.alert('Todo title must have more then 3 characters');
   };
-
-  console.log(todo);
 
   return (
     <div>
