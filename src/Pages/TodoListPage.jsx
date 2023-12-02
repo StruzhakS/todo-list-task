@@ -18,6 +18,8 @@ const TodoListPage = () => {
     setShowModal(false);
   };
 
+  const completedTodo = todos?.filter(el => el.completed === true);
+  console.log(completedTodo);
   useEffect(() => {
     const getAllTodos = async () => {
       const allTodos = await fetchAllTodos();
@@ -28,7 +30,7 @@ const TodoListPage = () => {
 
   return (
     <div className={s.container}>
-      <p>Всього задач: {todos?.length || 0}</p>
+      <p>Всього виконаних задач: {`${completedTodo.length} / ${todos?.length}` || 0}</p>
 
       <button type="button" onClick={() => openModal()}>
         Add todo
