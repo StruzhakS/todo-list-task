@@ -49,14 +49,15 @@ const Todo = ({ todo }) => {
           >
             <RiDeleteBin2Line />
           </button>
+
           <input
             type="checkbox"
-            className={s.checkboСustom}
+            className={s.highload1}
             checked={completedTodo}
             onChange={completedHandler}
             id={todo.id}
           />
-          <label htmlFor={todo.id} className={s.label}></label>
+          <label htmlFor={todo.id} className={s.lb1}></label>
 
           <button type="button" className={s.editBtn} onClick={() => openUpdateModal(todo.id)}>
             <LiaEdit />
