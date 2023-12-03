@@ -3,6 +3,7 @@ import ReactModal from 'react-modal';
 import { useDispatch } from 'react-redux';
 import { updateTodoById } from '../../Redux/TodosSlice';
 import { modalStyles } from '../../Constans/modalStyle';
+import s from './modal.module.css';
 
 ReactModal.setAppElement('#main');
 
@@ -37,13 +38,14 @@ const UpdateTodoModal = ({ show, close, todo }) => {
         onRequestClose={close}
         style={modalStyles}
       >
-        <p>Update todo title</p>
         <input
+          className={s.input}
           type="text"
           value={updatedTodoTitle}
+          placeholder="Update todo title"
           onChange={e => setUpdatedTodoTitle(e.target.value)}
         />
-        <button type="button" onClick={() => updateTodo()}>
+        <button type="button" className={s.modal_add_btn} onClick={() => updateTodo()}>
           Update
         </button>
       </ReactModal>

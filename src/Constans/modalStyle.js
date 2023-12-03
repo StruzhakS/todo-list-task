@@ -4,6 +4,8 @@ export const modalStyles = {
     opacity: '0.95',
   },
   content: {
+    backgroundColor: '#aaa',
+    opacity: 1,
     position: 'absolute',
     display: 'flex',
     justifyContent: 'space-between',
@@ -17,7 +19,7 @@ export const modalStyles = {
     background: '#fff',
     overflow: 'auto',
     WebkitOverflowScrolling: 'touch',
-    borderRadius: '4px',
+    borderRadius: '14px',
     outline: 'none',
     gap: '10px',
   },

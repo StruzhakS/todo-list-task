@@ -4,6 +4,7 @@ import ReactModal from 'react-modal';
 import { useDispatch } from 'react-redux';
 import { addNewTodo } from '../../Redux/TodosSlice';
 import { modalStyles } from '../../Constans/modalStyle';
+import s from './modal.module.css';
 
 ReactModal.setAppElement('#main');
 // Модальне вікно для додавання Todo
@@ -11,6 +12,7 @@ ReactModal.setAppElement('#main');
 const Modal = ({ showModal, closeModal }) => {
   const [todoTitle, setTodoTitle] = useState('');
   const dispatch = useDispatch();
+
   const addNewTodoFunction = () => {
     if (todoTitle.length > 3) {
       return dispatch(
@@ -34,9 +36,14 @@ const Modal = ({ showModal, closeModal }) => {
         onRequestClose={closeModal}
         style={modalStyles}
       >
-        <p>Add title</p>
-        <input type="text" value={todoTitle} onChange={e => setTodoTitle(e.target.value)} />
-        <button type="button" onClick={() => addNewTodoFunction()}>
+        <input
+          type="text"
+          className={s.input}
+          value={todoTitle}
+          onChange={e => setTodoTitle(e.target.value)}
+          placeholder="Add todo title"
+        />
+        <button type="button" className={s.modal_add_btn} onClick={() => addNewTodoFunction()}>
           Add todo
         </button>
       </ReactModal>
