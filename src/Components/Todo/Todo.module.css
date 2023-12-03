@@ -17,6 +17,13 @@
   cursor: pointer;
 }
 
+.editBtn:hover,
+.deleteBtn:hover,
+.lb1:hover {
+  scale: 1.15;
+  font-weight: 900;
+}
+
 .controllItem {
   display: flex;
   flex-direction: column;
