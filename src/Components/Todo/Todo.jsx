@@ -50,30 +50,31 @@ const Todo = ({ todo }) => {
             <RiDeleteBin2Line />
           </button>
 
-          <label class="switch">
+          <label className="switch">
             <input
-              class="switch__input"
+              className="switch__input"
               type="checkbox"
               role="switch"
               checked={completedTodo}
               onChange={completedHandler}
               id={todo.id}
             />
-            <svg class="switch__check" viewBox="0 0 16 16" width="16px" height="16px">
+            <svg className="switch__check" viewBox="0 0 16 16" width="16px" height="16px">
               <polyline
-                class="switch__check-line"
+                className="switch__check-line"
                 fill="none"
                 stroke="hsl(var(--hue),10%,50%)"
-                stroke-dasharray="9 9"
-                stroke-dashoffset="3.01"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeDasharray="9 9"
+                strokeDashoffset="3.01"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 points="5,8 11,8 11,11"
               />
             </svg>
-            <span class="switch__sr">Power</span>
+            <span className="switch__sr">Power</span>
           </label>
+          {/* ///////////////////////////////////// */}
 
           <button type="button" className={s.editBtn} onClick={() => openUpdateModal(todo.id)}>
             <LiaEdit />

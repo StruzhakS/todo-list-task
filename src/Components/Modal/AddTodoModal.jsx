@@ -25,6 +25,7 @@ const Modal = ({ showModal, closeModal }) => {
         closeModal()
       );
     }
+    navigator.vibrate(500);
     window.alert('Todo title must have more then 3 characters');
   };
 
